@@ -66,6 +66,8 @@ tasks.compileJava {
 tasks.shadowJar {
     archiveFileName.set("${rootProject.name}-${version}.jar")
 
+    exclude("plugin.yml") // PacketEvents' plugin.yml does not belong into the shadow jar
+
     relocate("dev.jorel.commandapi", "re.imc.geysermodelengine.libs.commandapi")
 
     relocate("com.github.retrooper", "re.imc.geysermodelengine.libs.com.github.retrooper.packetevents")
